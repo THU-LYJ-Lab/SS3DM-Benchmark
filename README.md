@@ -1,5 +1,10 @@
 # SS3DM-Benchmark
 
+## Evaluation
+1. Download the predicted meshes and sampled points.
+2. 
+
+## Run the existing methods
 Evaluate SuGaR meshes.
 ```
 python neuralsim/code_single/tools/evaluate_for_ss3dm_dense.py --exp_dir /data/huyb/cvpr-2024/SuGaR/output/refined_mesh_flip --method sugar --box --resample
