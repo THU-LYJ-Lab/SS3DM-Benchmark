@@ -1,49 +1,68 @@
 # SS3DM-Benchmark
 
 ## Evaluation
-1. Download the predicted meshes and sampled points.
-2. 
 
+### Evaluate the meshes
 
-Evaluate SuGaR meshes.
+We provide the example evaluation scripts for the methods mentioned in our paper.
+
+Evaluate meshes produced by StreetSurf.
 ```
-python neuralsim/code_single/tools/evaluate_for_ss3dm_dense.py --exp_dir /data/huyb/cvpr-2024/SuGaR/output/refined_mesh_flip --method sugar --box --resample
+python evaluate_mesh.py --exp_dir /data/huyb/cvpr-2024/neuralsim/logs/ss3dm/  --method streetsurf --box --resample
 ```
-Evaluate streetsurf.
+
+Evaluate meshes produced by UrbanNerf.
 ```
-python neuralsim/code_single/tools/evaluate_for_ss3dm_dense.py --exp_dir /data/huyb/cvpr-2024/neuralsim/logs/ss3dm/  --method streetsurf --box --resample
+python evaluate_mesh.py --exp_dir /data/huyb/cvpr-2024/neuralsim/logs/ss3dm --method urban_nerf --box --resample
 ```
-Evaluate urban_nerf.
+
+Evaluate meshes produced by SuGaR.
 ```
-python neuralsim/code_single/tools/evaluate_for_ss3dm_dense.py --exp_dir /data/huyb/cvpr-2024/neuralsim/logs/ss3dm --method urban_nerf --box --resample
+python evaluate_mesh.py --exp_dir /data/huyb/cvpr-2024/SuGaR/output/refined_mesh_flip --method sugar --box --resample
 ```
-Evaluate R3D3
+
+Evaluate meshes produced by NeRF-LOAM
 ```
-python neuralsim/code_single/tools/evaluate_for_ss3dm_dense.py --exp_dir /data/huyb/cvpr-2024/r3d3/logs/ddad_tiny/eval_predictions --method r3d3 --box --resample
+python evaluate_mesh.py --exp_dir /data/huyb/cvpr-2024/NeRF-LOAM/logs/ss3dm --method nerf_loam --box --resample
 ```
-Evaluate NeRF-LOAM
+
+Evaluate meshes produced by R3D3
 ```
-python neuralsim/code_single/tools/evaluate_for_ss3dm_dense.py --exp_dir /data/huyb/cvpr-2024/NeRF-LOAM/logs/ss3dm --method nerf_loam --box --resample
+python evaluate_mesh.py --exp_dir /data/huyb/cvpr-2024/r3d3/logs/ddad_tiny/eval_predictions --method r3d3 --box --resample
+```
+
+### Collect the metrics
+
+We also include an example script to collect evaluation results and form a latex table
+```
+python collect_results.py --box --resample --plt_curve
 ```
 
 ## Run the existing methods
 
 ### StreetSurf
 
-You can use this script [neuralsim/code_single/tools/train_for_ss3dm.py](neuralsim/code_single/tools/train_for_ss3dm.py)
+You can use this script to predict the meshes. [[neuralsim/code_single/tools/train_for_ss3dm.py]](https://github.com/AlbertHuyb/neuralsim/blob/main/code_single/tools/train_for_ss3dm.py)
 
 ### UrbanNeRF
 
-You can use this script [neuralsim/code_single/tools/train_for_ss3dm_urban_nerf.py](neuralsim/code_single/tools/train_for_ss3dm_urban_nerf.py)
+You can use this script to predict the meshes. [[neuralsim/code_single/tools/train_for_ss3dm_urban_nerf.py]](https://github.com/AlbertHuyb/neuralsim/blob/main/code_single/tools/train_for_ss3dm_urban_nerf.py)
 
 ### SuGaR
 
-You can use this script [SuGaR/train_ss3dm.py](SuGaR/train_ss3dm.py) to train and extract mesh models.
+You can use this script to train and extract mesh models. [[SuGaR/train_ss3dm.py]](https://github.com/AlbertHuyb/SuGaR/blob/main/train_ss3dm.py) 
 
-The produced meshes should be flipped by this script [SuGaR/convert_mesh.py](SuGaR/convert_mesh.py).
+The produced meshes should be flipped by this script. [[SuGaR/convert_mesh.py]](https://github.com/AlbertHuyb/SuGaR/blob/main/convert_mesh.py)
 
 ### NeRF-LOAM
 
-You can use this script [NeRF-LOAM/demo/train_for_ss3dm_nerf_loam.py](NeRF-LOAM/demo/train_for_ss3dm_nerf_loam.py) to train the models.
+You can use this script to train the models. [[NeRF-LOAM/demo/train_for_ss3dm_nerf_loam.py]](https://github.com/AlbertHuyb/NeRF-LOAM/blob/master/demo/train_for_ss3dm_nerf_loam.py) 
 
-The produced meshes should be post-processed by this script [NeRF-LOAM/demo/post_process_for_ss3dm_nerf_loam.py](NeRF-LOAM/demo/post_process_for_ss3dm_nerf_loam.py).
+The produced meshes should be post-processed by this script.  [[NeRF-LOAM/demo/post_process_for_ss3dm_nerf_loam.py]](https://github.com/AlbertHuyb/NeRF-LOAM/blob/master/demo/post_process_for_ss3dm_nerf_loam.py)
+
+### R3D3
+You can use this script to predict the depth maps. [[r3d3/evaluate.sh]](https://github.com/AlbertHuyb/r3d3/blob/master/evaluate.sh) 
+
+The produced depth maps should be post-processed by these scripts. [[r3d3/tools/fuse_depth_to_pointcloud.py]](https://github.com/AlbertHuyb/r3d3/blob/master/tools/fuse_depth_to_pointcloud.py), [[r3d3/tools/surface_extraction.py]](https://github.com/AlbertHuyb/r3d3/blob/master/tools/surface_extraction.py)
+
+After the post-processing step, the results would be converted to predicted mesh surfaces.

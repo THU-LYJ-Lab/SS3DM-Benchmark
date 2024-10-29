@@ -7,3 +7,6 @@
 [submodule "NeRF-LOAM"]
 	path = NeRF-LOAM
 	url = https://github.com/AlbertHuyb/NeRF-LOAM.git
+[submodule "r3d3"]
+	path = r3d3
+	url = https://github.com/AlbertHuyb/r3d3.git
