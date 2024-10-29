@@ -30,12 +30,12 @@ python neuralsim/code_single/tools/evaluate_for_ss3dm_dense.py --exp_dir /data/h
 
 ### StreetSurf
 
-You can use [this script](neuralsim/code_single/tools/train_for_ss3dm.py)
+You can use this script [neuralsim/code_single/tools/train_for_ss3dm.py](neuralsim/code_single/tools/train_for_ss3dm.py)
 
 ### UrbanNeRF
 
-You can use [this script](neuralsim/code_single/tools/train_for_ss3dm_urban_nerf.py)
+You can use this script [neuralsim/code_single/tools/train_for_ss3dm_urban_nerf.py](neuralsim/code_single/tools/train_for_ss3dm_urban_nerf.py)
 
 ### SuGaR
 
-You can use [this script](SuGaR/train_ss3dm.py)
+You can use this script [SuGaR/train_ss3dm.py](SuGaR/train_ss3dm.py)
