@@ -22,7 +22,7 @@ from utils.evaluate_utils import read_meta_data, calculate_metrics, clean_invisi
 
 def get_seq_exp_dir(exp_root, method_name, town_name, seq_name):
     if method_name == 'streetsurf' or method_name == 'urban_nerf':
-        seq_exp_dir = os.path.join(exp_root, method_name, seq_name)
+        seq_exp_dir = os.path.join(exp_root, seq_name)
     elif method_name == 'r3d3':
         seq_exp_dir = os.path.join(exp_root, town_name, seq_name)
     elif method_name == 'nerf_loam' or method_name == 'sugar':
