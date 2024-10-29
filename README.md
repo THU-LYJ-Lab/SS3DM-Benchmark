@@ -1,6 +1,6 @@
 # SS3DM-Benchmark
 
-All sequences
+Benchmarking results on all sequences, including 14 short sequences, 8 middle sequences and 6 long sequences. 
 
 | Method | IoU↑ | Prec.↑ | Recall↑ | F-score↑ | Acc↓ | Comp↓ | CD↓ | Acc_N↓ | Comp_N↓ | CD_N↓ | CD+CD_N↓ |
 |--------|-------|---------|---------|-----------|-------|--------|------|--------|----------|--------|------------|
