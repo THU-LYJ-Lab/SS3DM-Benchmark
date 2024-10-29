@@ -1,3 +1,6 @@
 [submodule "neuralsim"]
 	path = neuralsim
 	url = https://github.com/AlbertHuyb/neuralsim.git
+[submodule "SuGaR"]
+	path = SuGaR
+	url = https://github.com/AlbertHuyb/SuGaR.git
