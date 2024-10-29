@@ -4,3 +4,6 @@
 [submodule "SuGaR"]
 	path = SuGaR
 	url = https://github.com/AlbertHuyb/SuGaR.git
+[submodule "NeRF-LOAM"]
+	path = NeRF-LOAM
+	url = https://github.com/AlbertHuyb/NeRF-LOAM.git

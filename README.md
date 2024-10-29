@@ -38,4 +38,12 @@ You can use this script [neuralsim/code_single/tools/train_for_ss3dm_urban_nerf.
 
 ### SuGaR
 
-You can use this script [SuGaR/train_ss3dm.py](SuGaR/train_ss3dm.py)
+You can use this script [SuGaR/train_ss3dm.py](SuGaR/train_ss3dm.py) to train and extract mesh models.
+
+The produced meshes should be flipped by this script [SuGaR/convert_mesh.py](SuGaR/convert_mesh.py).
+
+### NeRF-LOAM
+
+You can use this script [NeRF-LOAM/demo/train_for_ss3dm_nerf_loam.py](NeRF-LOAM/demo/train_for_ss3dm_nerf_loam.py) to train the models.
+
+The produced meshes should be post-processed by this script [NeRF-LOAM/demo/post_process_for_ss3dm_nerf_loam.py](NeRF-LOAM/demo/post_process_for_ss3dm_nerf_loam.py).
