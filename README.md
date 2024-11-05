@@ -14,6 +14,8 @@ Benchmarking results on all sequences, including 14 short sequences, 8 middle se
 
 ## Evaluation
 
+You can download some example output meshes from [here](https://drive.google.com/drive/folders/1-0xeAUYR6PicWK9eWmslVii3jGtyhL8Z). You can download the zip files under `output-mesh-part` folder and unzip them to an `output-mesh` folder.
+
 ### Evaluate the meshes
 
 We provide the example evaluation scripts for the methods mentioned in our paper.
