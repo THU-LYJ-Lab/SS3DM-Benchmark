@@ -1,5 +1,19 @@
 # SS3DM-Benchmark
 
+[[`HomePage`](https://ss3dm.top/)][`Paper`](https://arxiv.org/abs/2410.21739)][`Example Data`: [`GoogleDrive`](https://drive.google.com/drive/folders/1-5wfhVv4L6UMMqqED741I3HnEviOGsG7) [`HuggingFace`](https://huggingface.co/datasets/SS3DM/SS3DM-Benchmark-example/tree/main)]
+
+
+> SS3DM: Benchmarking Street-View Surface Reconstruction with a Synthetic 3D Mesh Dataset <br>
+[Yubin Hu*](https://github.com/AlbertHuyb), Kairui Wen*, Heng Zhou, [Xiaoyang Guo](https://xy-guo.github.io/), Yong-Jin Liu <br>
+NeurIPS 2024 Track on Dataset and Benchmark
+
+## News
+🌟 [2024/11/07] We've uploaded the data to [GoogleDrive](https://drive.google.com/drive/folders/1-0xeAUYR6PicWK9eWmslVii3jGtyhL8Z) and [HuggingFace](https://huggingface.co/SS3DM)!
+
+🥳 [2024/09/26] Our [paper](https://arxiv.org/abs/2410.21739) is accepted by NeurIPS 2024 Track on Dataset and Benchmark.
+
+## Benchmark 
+
 Benchmarking results on all sequences, including 14 short sequences, 8 middle sequences and 6 long sequences. 
 
 | Method | IoU↑ | Prec.↑ | Recall↑ | F-score↑ | Acc↓ | Comp↓ | CD↓ | Acc_N↓ | Comp_N↓ | CD_N↓ | CD+CD_N↓ |
