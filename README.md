@@ -85,6 +85,9 @@ The results would be saved to `neuralsim/logs/ss3dm/urban_nerf`.
 
 You can use this script to train and extract mesh models. [[SuGaR/train_ss3dm.py]](https://github.com/AlbertHuyb/SuGaR/blob/main/train_ss3dm.py) 
 
+- Before training, the data format should be converted using the following scripts subsequently: [[SuGaR/data/collect_images.py]](https://github.com/AlbertHuyb/SuGaR/blob/main/data/collect_images.py)  and [[SuGaR/data/create_sparse_model.py]](https://github.com/AlbertHuyb/SuGaR/blob/main/data/create_sparse_model.py).
+- The scripts above could create COLMAP-format sparse models from the SS3DM data sequences. 
+
 The produced meshes should be flipped by this script. [[SuGaR/convert_mesh.py]](https://github.com/AlbertHuyb/SuGaR/blob/main/convert_mesh.py)
 
 The results would be saved to `SuGaR/output/refined_mesh_flip`.
