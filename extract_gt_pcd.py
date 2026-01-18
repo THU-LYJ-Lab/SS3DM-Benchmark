@@ -22,7 +22,7 @@ import trimesh
 
 import logging
 
-import nr3d_lib.eval_utils.utils_geometry as GeoUtils
+from utils.evaluate_utils import resize_cam_intrin, generate_rays 
 
 import cv2
 
@@ -38,7 +38,7 @@ def clean_invisible_faces(pose_all, intrinsic, vertices, triangles, number_of_po
     target_img_size = (int(intrinsic[0,2]*2), int(intrinsic[1,2]*2))
     
     
-    intrin = GeoUtils.resize_cam_intrin(intrinsic, resolution_level=reso_level)
+    intrin = resize_cam_intrin(intrinsic, resolution_level=reso_level)
     if reso_level > 1.0:
         W = int(target_img_size[0] // reso_level)
         H = int(target_img_size[1] // reso_level)
@@ -49,7 +49,7 @@ def clean_invisible_faces(pose_all, intrinsic, vertices, triangles, number_of_po
     for pose in pose_all:
         pose_np = pose
         # import pdb; pdb.set_trace()
-        rays_o, rays_d = GeoUtils.generate_rays(target_img_size, intrin, pose)
+        rays_o, rays_d = generate_rays(target_img_size, intrin, pose)
         rays_o = rays_o.reshape(-1,3)
         rays_d = rays_d.reshape(-1,3)
 
