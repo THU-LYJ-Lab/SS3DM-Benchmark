@@ -80,7 +80,7 @@ def get_json_output_path(this_config_dir, args):
 
 def evaluate(this_config_dir, method_name, json_path, pose_all, intrinsic_mat, overwrite=False):
     pred_mesh_path, pcd_save_path = get_pred_mesh_path(this_config_dir, method_name)
-       
+
     if (not overwrite) and os.path.exists(json_path):
         print("Metrics already exist for {}".format(this_config_dir))
         with open(json_path, 'r') as f:

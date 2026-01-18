@@ -30,6 +30,24 @@ Benchmarking results on all sequences, including 14 short sequences, 8 middle se
 
 You can download some example output meshes from [here](https://drive.google.com/drive/folders/1-0xeAUYR6PicWK9eWmslVii3jGtyhL8Z). You can download the zip files under `output-mesh-part` folder and unzip them to an `output-mesh` folder.
 
+### Extract the ground-truth point clouds
+
+We provide the `extract_gt_pcd.py` script to generate high-quality ground-truth point clouds from the raw dataset. This script performs several processing steps to ensure fair evaluation:
+
+**Depth Fusion:** Projects and fuses ground-truth depth maps into a coherent point cloud.
+
+**Mesh Cleaning:** Removes invisible faces from the ground-truth mesh using ray-casting based on camera poses.
+
+**Dense Sampling & Filtering:** Samples dense points from the cleaned mesh and filters out artifacts that deviate significantly from the fused depth data.
+
+To generate the ground truth data, run the following command (replace `<path_to_data_root>` with the location of your SS3DM dataset):
+```
+python extract_gt_pcd.py --data_root <path_to_data_root>
+```
+
+**Note:** This script will process sequences found in the data root and save the final cleaned point clouds (e.g., selected_gt_point_cloud_dense_resampled.ply) directly into the respective sequence directories.
+
+
 ### Evaluate the meshes
 
 We provide the example evaluation scripts for the methods mentioned in our paper.
